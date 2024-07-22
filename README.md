@@ -102,5 +102,7 @@ echo "http://$GATEWAY_URL/productpage"
 Paths to YAML Files
 
 Bookinfo Application YAML: istio-1.22.3/samples/bookinfo/platform/kube/bookinfo.yaml
+
 Bookinfo Gateway YAML: istio-1.22.3/samples/bookinfo/networking/bookinfo-gateway.yaml
+
 Istio Add-ons: istio-1.22.3/samples/addons
