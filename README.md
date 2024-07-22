@@ -6,10 +6,13 @@ Istio Deployment on DigitalOcean Kubernetes
  step-by-step process to deploy Istio on a DigitalOcean Kubernetes cluster, deploy a sample application, connect it with the service mesh in Sidecar mode, and deploy the Istio dashboard for monitoring.
 
 Prerequisites
+
 doctl (DigitalOcean command-line tool)
 kubectl (Kubernetes command-line tool)
 Istio
+
 Steps
+
 1. Set Up DigitalOcean Kubernetes Cluster
 Install doctl:
 
@@ -19,7 +22,7 @@ sudo mv doctl /usr/local/bin
 Authenticate doctl:
 
 
-doctl auth init --access-token REMOVED
+doctl auth init --access-token dop_v1_87453f9b703904bdbfe020ed5eda5315831ea4997ca3fbc41a48e204cba9e910
 Save Kubernetes cluster configuration:
 
 
@@ -29,10 +32,10 @@ Verify your kubectl context:
 
 kubectl config get-contexts
 kubectl get nodes
+
 2. Install Istio
 Download Istio:
 
- 
 curl -L https://istio.io/downloadIstio | sh -
 cd istio-*
 export PATH=$PWD/bin:$PATH
@@ -44,8 +47,10 @@ Enable Istio sidecar injection for the default namespace:
 
 
 kubectl label namespace default istio-injection=enabled
+
 3. Deploy the Sample Application
 Deploy the Bookinfo sample application:
+
 
 kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 Verify the services and pods are deployed:
@@ -53,6 +58,7 @@ Verify the services and pods are deployed:
 
 kubectl get services
 kubectl get pods
+
 4. Expose the Application using Istio Ingress Gateway
 Apply the Gateway and VirtualService configuration:
 
