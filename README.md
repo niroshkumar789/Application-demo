@@ -1,6 +1,8 @@
 # application-demo
 
-# assignment-istio
+<img width="1440" alt="Screenshot 2024-07-25 at 18 18 57" src="https://github.com/user-attachments/assets/983ecad8-30dc-49fe-9962-a38b33ce778d">
+<img width="1440" alt="Screenshot 2024-07-25 at 18 10 34" src="https://github.com/user-attachments/assets/4c188d6b-6939-4dcc-988d-383c243ea218">
+<img width="1440" alt="Screenshot 2024-07-25 at 18 11 11" src="https://github.com/user-attachments/assets/323a73f9-319f-465f-8500-c51e2d73d700">
 
 Istio Deployment on DigitalOcean Kubernetes
  step-by-step process to deploy Istio on a DigitalOcean Kubernetes cluster, deploy a sample application, connect it with the service mesh in Sidecar mode, and deploy the Istio dashboard for monitoring.
@@ -106,3 +108,4 @@ Bookinfo Application YAML: istio-1.22.3/samples/bookinfo/platform/kube/bookinfo.
 Bookinfo Gateway YAML: istio-1.22.3/samples/bookinfo/networking/bookinfo-gateway.yaml
 
 Istio Add-ons: istio-1.22.3/samples/addons
+
