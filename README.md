@@ -1,11 +1,15 @@
 # application-demo
 
-<img width="1440" alt="Screenshot 2024-07-25 at 18 18 57" src="https://github.com/user-attachments/assets/983ecad8-30dc-49fe-9962-a38b33ce778d">
-<img width="1440" alt="Screenshot 2024-07-25 at 18 10 34" src="https://github.com/user-attachments/assets/4c188d6b-6939-4dcc-988d-383c243ea218">
-<img width="1440" alt="Screenshot 2024-07-25 at 18 11 11" src="https://github.com/user-attachments/assets/323a73f9-319f-465f-8500-c51e2d73d700">
+<img width="1440" alt="Screenshot 2024-07-29 at 14 25 43" src="https://github.com/user-attachments/assets/f5889cf8-1a82-4094-8e46-3ef87a699980">
+
+<img width="1440" alt="Screenshot 2024-07-29 at 14 27 37" src="https://github.com/user-attachments/assets/b5793db3-ede2-481a-8a3a-e0bfd76cd795">
+
+<img width="1440" alt="Screenshot 2024-07-29 at 14 29 07" src="https://github.com/user-attachments/assets/0badcec8-ca0d-431f-b18c-2489919daed7">
+
+<img width="1440" alt="Screenshot 2024-07-29 at 14 28 53" src="https://github.com/user-attachments/assets/0688193d-b737-45ae-98ff-01e37f3271b8">
 
 Istio Deployment on DigitalOcean Kubernetes
- step-by-step process to deploy Istio on a DigitalOcean Kubernetes cluster, deploy a sample application, connect it with the service mesh in Sidecar mode, and deploy the Istio dashboard for monitoring.
+step-by-step process to deploy Istio on a DigitalOcean Kubernetes cluster, deploy a sample application, connect it with the service mesh in Sidecar mode, and deploy the Istio dashboard for monitoring.
 
 Prerequisites
 
@@ -84,20 +88,20 @@ Access the application:
 Open a web browser and navigate to the URL printed in the previous step, e.g., http://<EXTERNAL-IP>/productpage.
 
 5. Deploy the Istio Dashboard
-
-
 kubectl apply -f samples/addons
-
 get istioctl dashboard kiali
 
-to access application 
-
+to access application Externally
 kubectl get svc istio-ingressgateway -n istio-system
 
 http://<EXTERNAL-IP>/productpage
 
 export GATEWAY_URL=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 echo "http://$GATEWAY_URL/productpage"
+
+to access application internally & dashboard kiali 
+http://localhost:8080
+http://localhost:20001/kiali
 
 
 
